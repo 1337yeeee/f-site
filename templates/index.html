@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>hello</title>
+{% endblock %}
+
+{% block body %}
+{% if user %}
+    <h1>Hello, {{ user.name }}</h1>
+    <h3><a href="/my_page">Go see your page!</a></h3>
+{% else %}
+    <h1>Hey there!</h1>
+{% endif %}
+{% endblock %}

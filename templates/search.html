@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="container-flex">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            {% if users %}
+                {% for user_ in users %}
+                    <a class="card text-reset text-decoration-none" href="user/{{user_.id}}" style="margin-bottom:1rem">
+                        <div class="row">
+                            <div class="col-md-3 align-self-center text-center">
+                                <div class="card" style="margin:0.5rem;padding:0.2rem">
+                                    <h5>Content?</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-8 align-self-center">
+                                <h3>{{ user_.name }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            {% else %}
+                <p>Nothing was found</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
